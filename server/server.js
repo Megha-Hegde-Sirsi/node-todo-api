@@ -1,3 +1,5 @@
+require('./config/config.js')
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var { ObjectID } = require('mongodb');
@@ -63,7 +65,7 @@ app.delete('/todos/:id', (req, res) => {
       return res.status(404).send();
     }
 
-    res.send({todo});
+    res.send({ todo });
   }).catch((e) => {
     res.status(400).send();
   });
